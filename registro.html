@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	
+	<meta name="description" content="">
+	
+	<meta name="author" content="">
+	
+	<link rel="icon" href="images/favicon.ico">
+	
+	<title>registro</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+
+    <!--Fonts-->
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
+    
+    <!-- Icons -->
+    <link href="css/font-awesome.css" rel="stylesheet">
+    
+    <!-- Custom styles for this template -->
+    <link href="css/style.css" rel="stylesheet">
+</head>
+<body style="background: #C6CFDB">
+	<div class="container-fluid" id="wrapper"><br><br>
+		<div class="row justify-content-md-center">
+			
+			<div class="col-lg-4 mb-4">
+								<div class="card">
+									<div class="card-header ">Registro </div>
+									
+									<div class="card-block" id="tarjeta">
+										<form action="">
+          
+            
+             <div class="form-group form-inline col-md-12">
+            <span class="fa fa-key" style="font-size: 40px;color:#053446; "></span>&nbsp;&nbsp;
+            <input type="password" class="form-control" id="pass" style="border:none;  border-bottom: thin #053446 solid; width: 75%;" placeholder="clave de registro" >
+			</div>
+          <button type="button" onClick="ocultar()" class="btn btn-outline-primary btn-sm" style="float:right;margin-top:5px;margin-right: 10px" id="enviar" value="reg">registrarse</button>
+        
+      </form>
+									</div><div class="card-footer bg-primary " ><center><a href="index.php" class="btn text-white">iniciar sesión </a></center></div>
+								</div>
+			
+			
+			
+		</div></div>
+		
+	
+
+
+ <script src="js/jquery-3.2.1.min.js"></script>
+
+<script>
+	function ocultar(){
+		
+
+		 $.get("lib/personas.php",{btn:$("#enviar").val(), pass:$("#pass").val()},function(data, status){
+         
+			 $("#tarjeta").html(data); 
+    });}
+	
+		
+		function email(str){
+			
+			if(!str.match('@')){
+				
+				$("#e-mail").css('border-color','red');
+				
+				$("#e-mail").css('color','red');
+				
+				$(".btn").attr("disable","false")
+			
+			
+			
+		}else
+			{
+				$("#e-mail").css('border-color','#053446');
+				$("#e-mail").css('color','#053446');
+				$(".btn").attr("disable","true")
+			}
+		
+	}
+		
+		
+		</script>
+		
+    <script src="dist/js/bootstrap.min.js"></script>
+    
+    <script src="js/chart.min.js"></script>
+    <script src="js/chart-data.js"></script>
+    <script src="js/easypiechart.js"></script>
+    <script src="js/easypiechart-data.js"></script>
+    <script src="js/bootstrap-datepicker.js"></script>
+    <script src="js/custom.js"></script>
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js" integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb" crossorigin="anonymous"></script>
+	</div>
+	</body></html>
+    
